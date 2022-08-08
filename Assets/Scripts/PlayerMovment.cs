@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovment : MonoBehaviour
+public class PlayerMovment : EndMEnu
 {
 
     public Rigidbody rb;
     public float forwardForce = 2000f;
     public float sideWaysForce=500f;
-    
+   
+
     // Update is called once per frame
     void FixedUpdate() 
     {
@@ -21,9 +22,19 @@ public class PlayerMovment : MonoBehaviour
           
         
        
-        if (rb.position.y <= 0.7)
+        if (rb.position.y <= 0)
         {
-            FindObjectOfType<GameManager>().EndGame();
+            movement.enabled = false;
+
+            Time.timeScale = 0f;
+
+
+            endWindow.SetActive(true);
+            diamond.text = $"потратить{HowDiamondLose}";
+            HowDiamondLose += 5;
+
+
+            //   FindObjectOfType<GameManager>().EndGame();
         }
     }
 }

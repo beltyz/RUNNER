@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
+   public GameObject menu;
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+
+      menu.SetActive(false);
+        Time.timeScale = 1.0f;  
     }
 }

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    public GameObject menu;
+
     [SerializeField] private float speed = 10f;
     void Start()
     {
+       
         Destroy(gameObject, 10);
     }
 
